@@ -1,0 +1,42 @@
+<h1 class="text-center">Edit Camp</h1>
+
+<div class="col col-sm-8 col-md-6 col-lg-4 mx-auto">
+  <form
+    action="/camps/<%= camp._id %>?_method=PATCH"
+    method="post"
+    novalidate
+    class="needs-validation"
+  >
+    <div class="mb-3">
+      <label for="title" class="form-label">Title</label>
+      <input
+        type="text"
+        name="title"
+        id="title"
+        class="form-control"
+        required
+        value="<%= camp.title %>"
+      />
+      <div class="invalid-feedback">Title is required</div>
+    </div>
+    <div class="mb-3">
+      <label for="location" class="form-label">Location</label>
+      <input
+        type="text"
+        name="location"
+        id="location"
+        class="form-control"
+        required
+        value="<%= camp.location %>"
+      />
+      <div class="invalid-feedback">Location is required</div>
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">Description</label>
+      <textarea name="description" id="description" class="form-control">
+<%= camp.description %></textarea
+      >
+    </div>
+    <button type="submit" class="btn btn-primary">Update</button>
+  </form>
+</div>
